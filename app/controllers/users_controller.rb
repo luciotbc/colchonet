@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         if @user.update_attributes(user_params)
             redirect_to @user, notice: 'Cadastro atualizado com sucesso!'
         else
-            render :update
+            render :edit
         end
     end
 

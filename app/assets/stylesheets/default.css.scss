@@ -5,6 +5,11 @@ $sans-serif-families: "Helvetica", sans-serif;
 $error-text-color: #B94A48;
 $success-text-color: #468847;
 
+@import "shadow";
+$header-height: 55px;
+$content-width: 700px;
+
+
 * {
     font-family: $sans-serif-families;
     font-size: 14px;

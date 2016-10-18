@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :require_no_authentication, :only => [:new, :create]
+  before_filter :can_change, :only => [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -34,5 +37,17 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:full_name, :location, :email, :password, :password_confirmation, :bio)
+  end
+
+  private
+
+  def can_change
+    unless user_signed_in? current_user == user
+      redirect_to user_path(params[:id])
+    end
+  end
+
+  def user
+    @user ||= User.find(params[:id])
   end
 end

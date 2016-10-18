@@ -12,7 +12,7 @@ class UserSession
     @password = attributes[:password]
   end
 
-  def authenticate
+  def authenticate!
     user = User.authenticate(@email, @password)
     if user.present?
       store(user)

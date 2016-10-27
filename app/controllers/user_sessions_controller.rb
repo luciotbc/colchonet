@@ -7,8 +7,8 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @session = UserSession.new(session, params[:user_session])
-    if @session.authenticate
+    @session = UserSession.new(session, user_session_params)
+    if @session.authenticate!
       redirect_to root_path, notice: t('flash.notice.signed_in')
     else
       render :new
@@ -20,4 +20,7 @@ class UserSessionsController < ApplicationController
     redirect_to root_path, :notice => t('flash.notice.signed_out')
   end
 
+  def user_session_params
+    params.require(:user_session).permit(:email, :password)
+  end
 end

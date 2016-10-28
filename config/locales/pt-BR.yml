@@ -92,4 +92,4 @@ pt-BR:
     my_profile: Meu perfil
     signout: Logout
 
-  dialogs:    destroy: 'Você tem certeza que quer remover?'  rooms:    index:      title: 'Quartos disponíveis'    room:      owner_html: '&mdash; %{owner} (%{when})'      edit: 'Editar'      destroy: 'Remover'    edit:      title: 'Alterar informações do quarto'
+  dialogs:    destroy: 'Você tem certeza que quer remover?'  rooms:    index:      title: 'Quartos disponíveis'    room:      owner_html: '&mdash; %{owner} (%{when})'      edit: 'Editar'      destroy: 'Remover'    edit:      title: 'Alterar informações do quarto'    review:      login_to_review: 'Faça o login para avaliar quartos'      stats:        zero: 'Não há avaliações'        one: '%{average}/%{max} (1 avaliação)'        other: '%{average}/%{max} (%{count} avaliações)'

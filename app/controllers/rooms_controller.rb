@@ -2,11 +2,14 @@ class RoomsController < ApplicationController
   before_filter :require_authentication,  :only => [:new, :edit, :create, :update, :destroy]
 
   def index
-    @rooms = Room.most_recent
+    @rooms = Room.most_recent.map do |room|
+    # Não exibiremos o formulário na listagem
+    RoomPresenter.new(room, self, false)
+    end
   end
 
   def show
-    @room = Room.find(params[:id])
+    @room = RoomPresenter.new(Room.find(params[:id]), self)
   end
 
   def new
@@ -42,6 +45,8 @@ class RoomsController < ApplicationController
     @room.destroy
     redirect_to rooms_url
   end
+
+  private
 
   def room_params
     params.require(:room).permit(:title, :location, :description)

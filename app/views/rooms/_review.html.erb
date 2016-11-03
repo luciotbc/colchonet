@@ -1,8 +1,13 @@
-<section class="review">
-  <% if room.show_form? %>
-    <%= render :partial => 'review_form', :locals => {:room => room} %>
-  <% else %>
-    <%= t '.stats', :average => room.stars,
-        :max => room.review_points.max, :count => room.total_reviews %>
+<section class='review'>
+<% if room.show_form? %>
+  <%= render :partial => 'review_form', :locals => {:room => room} %>
+<% else %>
+  <% room.stars.times do %>
+    <span class="fa fa-star"></span>
   <% end %>
+  <% (room.review_points.max - room.stars).times do %>
+    <span class="fa fa-star-o"></span>
+  <% end %>
+  <%= t '.stats', :count => room.total_reviews %>
+<% end %>
 </section>

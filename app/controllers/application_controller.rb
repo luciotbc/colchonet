@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   delegate :current_user, :user_signed_in?, to: :user_session
   helper_method :current_user, :user_signed_in?
-  
+
   protect_from_forgery
 
-  before_filter :set_locale
+  before_action :set_locale
 
   #Locale config
   def set_locale

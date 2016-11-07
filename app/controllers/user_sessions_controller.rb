@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
-  before_filter :require_no_authentication, :only => [:new, :create]
-  before_filter :require_authentication, :only => :destroy
+  before_action :require_no_authentication, :only => [:new, :create]
+  before_action :require_authentication, :only => :destroy
 
   def new
     @session = UserSession.new(session)

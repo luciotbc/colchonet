@@ -1,95 +1,107 @@
 pt-BR:
-  users:
-    new:
-      title: Cadastro
-    edit:
-      title: Editar
-    show:
-      title: 'Perfil: %{user_name}'
-      edit: 'Editar perfil'
-      location: 'Localização: %{location}'
-      bio: 'Bio: %{bio}'
-    confirmations:
-      success: 'Email confirmado com sucesso, obrigado!'
 
-  rooms:
-    new:
-      title: Cadastro
-    edit:
-      title: Editar
-    index:
-      title: 'Quartos disponíveis'
+ users:
+  new:
+   title: Cadastro
+  edit:
+   title: Editar
+  show:
+   title: 'Perfil: %{user_name}'
+   edit: 'Editar perfil'
+   location: 'Localização: %{location}'
+   bio: 'Bio: %{bio}'
+  confirmations:
+   success: 'Email confirmado com sucesso, obrigado!'
 
-  signup_mailer:
-      confirm_email:
-        subject: 'Colcho.net - Confirme seu email'
-        title: 'Seja bem vindo ao Colcho.net!'
-        body: '|
-            Seja bem vindo ao Colcho.net, %{full_name}.
-            O Colcho.net é o lugar ideal para você alugar aquele quarto
-            sobrando na sua casa e ainda conhecer gente do mundo inteiro.'
-        confirm_link_html: 'Para você começar a usar o site, acesse o link: %{link}'
-        thanks_html: 'Obrigado por se cadastrar no %{link}.'
+ rooms:
+  new:
+   title: Cadastro
+  edit:
+   title: Editar
+  index:
+   title: 'Quartos disponíveis'
+   search_results: 'Resultados da busca'
+  search:
+   search_for: 'Buscar por...'
+  room:
+   owner_html: '&mdash; %{owner} (%{when})'
+   edit: 'Editar'
+   destroy: 'Remover'
+  edit:
+   title: 'Alterar informações do quarto'
+  review_form:
+   login_to_review: 'Faça o login para avaliar quartos'
+  review:
+   stats:
+    one: '(1 avaliação)'
+    other: '(%{count} avaliações)'
 
-  user_sessions:
-    new:
-      title: Login
-      sign_up: Cadastre-se
+ layout:
+  rooms: Quartos
+  new_room: Cadastre seu quarto!
+  signup: Cadastro
+  signin: Login
+  my_profile: Meu perfil
+  signout: Logout
+ dialogs:
+  destroy: 'Você tem certeza que quer remover?'
+
+ signup_mailer:
+  confirm_email:
+   subject: 'Colcho.net - Confirme seu email'
+   title: 'Seja bem vindo ao Colcho.net!'
+   body: '|
+   Seja bem vindo ao Colcho.net, %{full_name}.
+   O Colcho.net é o lugar ideal para você alugar aquele quarto
+   sobrando na sua casa e ainda conhecer gente do mundo inteiro.'
+   confirm_link_html: 'Para você começar a usar o site, acesse o link: %{link}'
+   thanks_html: 'Obrigado por se cadastrar no %{link}.'
+
+ user_sessions:
+  new:
+   title: Login
+   sign_up: Cadastre-se
   flash:
-    notice:
-      signed_in: 'Login efetuado com sucesso!'
-      signed_out: 'Logout efetuado com sucesso. Até Logo!'
-      room_updated: 'Quarto atualizado com sucesso!'
-    alert:
-      needs_login: 'Para continuar, você precisa estar logado!'
+   notice:
+    signed_in: 'Login efetuado com sucesso!'
+    signed_out: 'Logout efetuado com sucesso. Até Logo!'
+    room_updated: 'Quarto atualizado com sucesso!'
+   alert:
+    needs_login: 'Para continuar, você precisa estar logado!'
 
-  links:
-    back: Voltar
+ links:
+  back: Voltar
 
-  layout:
-    rooms: Quartos
-    signup: Cadastro
+ general:
+  form_error: 'Há erros no formulário, por favor verifique.'
 
-  general:
-    form_error: 'Há erros no formulário, por favor verifique.'
+ activerecord:
+  models:
+   room: Quarto
+   user: Usuário
+   attributes:
+    user:
+     bio: Biografia
+     email: Email
+     full_name: 'Nome completo'
+     location: Localização
+     password: Senha
+     password_confirmation: 'Confirme sua senha'
+    room:
+     description: Descrição
+     location: Localização
+     title: Título
 
-  activerecord:
-    models:
-      room: Quarto
-      user: Usuário
-    attributes:
-      user:
-        bio: Biografia
-        email: Email
-        full_name: 'Nome completo'
-        location: Localização
-        password: Senha
-        password_confirmation: 'Confirme sua senha'
-      room:
-        description: Descrição
-        location: Localização
-        title: Título
+ activemodel:
+  attributes:
+   user_session:
+    email: Email
+    password: Senha
+   errors:
+    messages:
+     invalid_login: 'Usuário ou senha inválidos'
 
-  activemodel:
-    attributes:
-      user_session:
-        email: Email
-        password: Senha
-    errors:
-      messages:
-        invalid_login: 'Usuário ou senha inválidos'
-
-  helpers:
-    submit:
-      user_session:
-        create: Entrar
-
-  layout:
-    rooms: Quartos
-    new_room: Cadastre seu quarto!
-    signup: Cadastro
-    signin: Login
-    my_profile: Meu perfil
-    signout: Logout
-
-  dialogs:    destroy: 'Você tem certeza que quer remover?'  rooms:    index:      title: 'Quartos disponíveis'    room:      owner_html: '&mdash; %{owner} (%{when})'      edit: 'Editar'      destroy: 'Remover'    edit:      title: 'Alterar informações do quarto'    review_form:      login_to_review: 'Faça o login para avaliar quartos'    review:      stats:        one: '(1 avaliação)'        other: '(%{count} avaliações)'
+ helpers:
+  submit:
+   user_session:
+    create: Entrar

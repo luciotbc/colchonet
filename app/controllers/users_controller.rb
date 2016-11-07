@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_no_authentication, :only => [:new, :create]
-  before_filter :can_change, :only => [:edit, :update]
+  before_action :require_no_authentication, :only => [:new, :create]
+  before_action :can_change, :only => [:edit, :update]
 
   def new
     @user = User.new

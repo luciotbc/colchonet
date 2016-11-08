@@ -34,7 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'friendly_id', '~> 5.1'
 
 # Use kaminari to pagination rooms
-gem 'kaminari', '~> 0.16.3'
+gem 'kaminari', '~> 0.17.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

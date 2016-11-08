@@ -30,8 +30,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use to slug
+# Use friendly_id to slug
 gem 'friendly_id', '~> 5.1'
+
+# Use kaminari to pagination rooms
+gem 'kaminari', '~> 0.16.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

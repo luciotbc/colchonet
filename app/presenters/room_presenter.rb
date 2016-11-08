@@ -39,6 +39,18 @@ class RoomPresenter
     @room.reviews.count
   end
 
+  def picture_url
+    @room.picture_url
+  end
+
+  def thumb_url
+    @room.picture.thumb.url
+  end
+
+  def has_picture?
+    @room.picture?
+  end
+
   # render @room resulta na renderização da partial 'room'
   def to_partial_path
     'room'

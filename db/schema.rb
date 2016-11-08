@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107190420) do
+ActiveRecord::Schema.define(version: 20161108120936) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161107190420) do
     t.integer  "user_id"
     t.integer  "reviews_count"
     t.string   "slug"
+    t.string   "picture"
     t.index ["slug"], name: "index_rooms_on_slug", unique: true
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end

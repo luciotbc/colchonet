@@ -8,6 +8,8 @@ class Room < ApplicationRecord
   validates_length_of :description, minimum: 30, allow_blank: false
 
   friendly_id :title, :use => [:slugged, :history]
+  mount_uploader :picture, PictureUploader
+
 
   scope :most_recent, -> { order('created_at DESC') }
 

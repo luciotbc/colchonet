@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
   end
 
   def create
@@ -35,7 +35,7 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
 
     if @room.update_attributes(room_params)
       redirect_to @room, :notice => t('flash.notice.room_updated')
@@ -61,7 +61,7 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:title, :location, :description)
+    params.require(:room).permit(:title, :location, :description, :picture)
   end
 
 end

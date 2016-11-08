@@ -36,6 +36,10 @@ gem 'friendly_id', '~> 5.1'
 # Use kaminari to pagination rooms
 gem 'kaminari', '~> 0.17.0'
 
+#Use to image uploads
+gem 'carrierwave', '~> 0.11.2'
+gem 'rmagick', '~> 2.16'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -1,6 +1,6 @@
 <% if @room.errors.any? %>
 <div id="error_explanation">
-  <%= t 'general.form_error' %>
+    <%= t 'general.form_error' %>
 </div>
 <% end %>
 
@@ -24,6 +24,11 @@
     <%= f.text_area :description %>
     <%= error_tag @room, :description %>
 
+</p>
+<p>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+    <%= error_tag @room, :picture %>
 </p>
 
 <p>
